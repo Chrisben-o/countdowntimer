@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apple Giveaway</title>
+ <style>
+    .countdown {
+      font-size: 50px;
+      text-align: center;
+    }
+  </style>
+  <script>
+
+    var countdownDate = new Date("March 3, 2024 00:00:00").getTime();
+
+   
+    var countdown = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countdownDate - now;
+
+      
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "the Giveaway hasended!";
+      }
+    }, 1000);
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Apple Giveaway!</h1><animateMotion></animateMotion>
+  <img src="C:\Users\bench\Pictures\Screenshots\iphone 15 pro.png" alt="iphone 15">
+  <img src="C:\Users\bench\Pictures\Screenshots\Screenshot 2024-02-18 204128.png" alt="iphone types" >
+ 
+  
+  <p>Hurry up! The giveaway ends in:</p>
+  <div class="countdown" id="countdown"></div>
+</body>
+</html>
